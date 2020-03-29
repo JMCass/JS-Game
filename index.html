@@ -4,70 +4,69 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+    <title>JS-Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
     <div class="container">
-        <h1 class="title"><span class="blue">IronHack</span> JS Introductory Workshop</h1>
-        <h2 class="title" id="sub-title">Rock, Paper, Scissors, Lizard, Spoc</h2>
-        <img src="https://www.ironhack.com/assets/icons/ironhack_logos/logo.svg" class='ih-logo'>
+        <h1 class="title"><span class="blue">IronHack Introductory Workshop:</span> Juego en JS</h1>
+        <h2 class="title" id="sub-title">Piedra, Papel, Tijeras, Lagartija, Spock</h2>
         <div class="game-container">
             <div class="sub-container">
-                <h3>Rules</h3>
-                <p class="basic-text"> This game emulates the popular game created in the Big Bang Theory, which basically is an extension of the widely know "Rock-Paper-Scissors"</p>
-                <p class="rules">The rules are as follows:</p>
+                <h3>Reglas</h3>
+                <p class="basic-text"> Este juego emula el juego propuesto en The Big Bang Theory, el cual es una extensión del famoso juego "Piedra-Papel-Tijeras"</p>
+                <p class="rules">Las reglas son las siguientes:</p>
                 <ul>
-                    <li class="basic-text">✂️ Scissors <span class="action">cut</span> 📃 Paper</li>
-                    <li class="basic-text">📃Paper <span class="action">covers</span> 🗿Rock</li>
-                    <li class="basic-text">🗿Rock <span class="action">crushes</span> 🦎Lizard</li>
-                    <li class="basic-text">🦎Lizard <span class="action">poisons</span> 🖖Spock</li>
-                    <li class="basic-text">🖖Spock <span class="action">smashes</span> ️✂️ Scissors</li>
-                    <li class="basic-text">✂️ Scissors <span class="action">decapitate</span> 🦎Lizard</li>
-                    <li class="basic-text">🦎Lizard <span class="action">eats</span> 📃Paper</li>
-                    <li class="basic-text">📃Paper <span class="action">disproves</span> 🖖Spock</li>
-                    <li class="basic-text">🖖Spock <span class="action">vaporizes</span> 🗿Rock</li>
-                    <li class="basic-text">🗿Rock <span class="action">crushes</span> ✂️ Scissors</li>
+                    <li class="basic-text">✂️ Tijeras <span class="action">cortan</span> 📃 Papel</li>
+                    <li class="basic-text">📃Papel <span class="action">cubren</span> 🗿Piedra</li>
+                    <li class="basic-text">🗿Piedra <span class="action">aplastan</span> 🦎Lagartija</li>
+                    <li class="basic-text">🦎Lagartija <span class="action">envenena</span> 🖖Spock</li>
+                    <li class="basic-text">🖖Spock <span class="action">rompe</span> ️✂️ Tijeras</li>
+                    <li class="basic-text">✂️ Tijeras <span class="action">decapita</span> 🦎Lagartija</li>
+                    <li class="basic-text">🦎Lagartija <span class="action">come</span> 📃Paper</li>
+                    <li class="basic-text">📃Papel <span class="action">refuta</span> 🖖Spock</li>
+                    <li class="basic-text">🖖Spock <span class="action">vaporiza</span> 🗿Piedra</li>
+                    <li class="basic-text">🗿Piedra <span class="action">aplastan</span> ✂️ Tijeras</li>
                 </ul>
             </div>
             <div class="sub-container">
-                <h3>Game!</h3>
+                <h3>Juega!</h3>
                 <div class="sub-container_game">
                     <div class="sub-container_game_nm">
-                        <h4>Enter Players Names</h4>
-                        <label class="basic-text" for="first-player">First Players' Name</label>
-                        <input id="first-player" type="text" placeholder="First Players Name">
-                        <label class="basic-text" for="second-player">Second Players' Name</label>
-                        <input id="second-player" value="Computer" type="text" placeholder="Second Players Name">
+                        <h4>Nombre de los jugadores</h4>
+                        <label class="basic-text" for="first-player">Nombre jugador 1</label>
+                        <input id="first-player" type="text" placeholder="Nombre jugador 1">
+                        <label class="basic-text" for="second-player">Nombre jugador 2</label>
+                        <input id="second-player" value="computer" type="text" placeholder="Nombre jugador 2">
                     </div>
                     <div class="sub-container_game_nm">
-                        <h4>Players Select Moves</h4>
-                        <label class="basic-text" for="first-player-move">First Players' Move</label>
+                        <h4>Selección de jugada</h4>
+                        <label class="basic-text" for="first-player-move">Selección jugador 1</label>
                         <select id="first-player-move">
-                            <option value="rock">🗿Rock</option>
-                            <option value="paper">📃Paper</option>
-                            <option value="scissors">✂️ Scissors</option>
-                            <option value="lizard">🦎Lizard</option>
+                            <option value="piedra">🗿Piedra</option>
+                            <option value="papel">📃Papel</option>
+                            <option value="tijeras">✂️ Tijerass</option>
+                            <option value="lagartija">🦎Lagartija</option>
                             <option value="spock">🖖Spock</option>
                         </select>
-                        <label class="basic-text" for="second-player-move">Second Players' Move</label>
+                        <label class="basic-text" for="second-player-move">Selección jugador 2</label>
                         <select id="second-player-move">
-                            <option value="computer">💻You Can't Know</option>
-                            <option value="rock">🗿Rock</option>
-                            <option value="paper">📃Paper</option>
-                            <option value="scissors">✂️ Scissors</option>
-                            <option value="lizard">🦎Lizard</option>
+                            <option value="computer">💻No puedes saber</option>
+                            <option value="piedra">🗿Piedra</option>
+                            <option value="papel">📃Papel</option>
+                            <option value="tijeras">✂️ Tijerass</option>
+                            <option value="lagartija">🦎Lagartija</option>
                             <option value="spock">🖖Spock</option>
                         </select>
                     </div>
                     <div>
                     </div>
                 </div>
-                <button id="play">Let's Play!</button>
+                <button id="play">Juguemos!</button>
                 <div class="result">
-                    <span id="result">RESULT GOES HERE</span>
+                    <span id="result">Resultado final</span>
                 </div>
             </div>
             <script src="solve.js"></script>

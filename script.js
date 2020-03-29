@@ -1,13 +1,13 @@
 const $playButton = document.getElementById("play")
 const emojis = {
-    rock: "🗿 Rock",
-    paper: "📃 Paper",
-    scissors: "✂️ Scissors",
-    lizard: "🦎 Lizard",
+    piedra: "🗿 Piedra",
+    papel: "📃 Papel",
+    tijeras: "✂️ Tijeras",
+    lagartija: "🦎 Lagartija",
     spock: "🖖 Spock"
 }
 
-const computerOptions = ["rock", "paper", "scissors", "lizard", "spock"]
+const computerOptions = ["piedra", "papel", "tijeras", "lagartija", "spock"]
 
 $playButton.addEventListener("click", () => {
     const $player1name = document.getElementById("first-player").value
@@ -20,7 +20,7 @@ $playButton.addEventListener("click", () => {
     $compSelect.value = "computer"
 
     if (!$player1name) {
-        alert("Hey! You not playing?!")
+        alert("Oye! No estás jugando?!")
         return
     }
 
@@ -29,13 +29,12 @@ $playButton.addEventListener("click", () => {
     const computerPick = computerOptions[compRand]
 
 
-
     // const result = solveProblem($player1name,$player2name,$player1select,$player2select);
 
-    const result = solveProblem($player1name, "computer", $player1select, computerPick);
+    const result = jsGame($player1name, "computer", $player1select, computerPick);
     let resultText
 
-    result.winner !== "none" ? resultText = `Winner is ${result.winner} 🥇🍾 by doing [${emojis[result.winnerSelection]}] over [${emojis[result.looserSelection]}]` : resultText = "It was a tie! 🤷‍♂️🤷‍♀️"
+    result.ganador !== "none" ? resultText = `El ganador es ${result.ganador} 🥇🍾 seleccionando [${emojis[result.ganadorEscoge]}] sobre [${emojis[result.perdedorEscoge]}]` : resultText = "Es un empate! 🤷‍♂️🤷‍♀️"
 
 
     $result.innerText = "🥁🥁🥁🥁🥁🥁"
